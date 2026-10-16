@@ -9,10 +9,9 @@
 <meta property="og:description" content="Founder of Calvary Life Chapel International. Church planter and teacher of the Word for over thirty years. Hear The Lord's Table on Spirit 88.3 FM.">
 <meta property="og:image" content="https://spiritgh.com/preachers/images/bishop-divine-adjei.jpg">
 <meta property="og:type" content="profile">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/spirit-fm-logo.png">
 <link rel="stylesheet" href="/preachers/preachers.css">
+<link rel="stylesheet" href="/assets/nav.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,17 +25,27 @@
 </head>
 <body>
 
-<header class="top">
+<div class="live-bar">
   <div class="wrap">
-    <a class="brand" href="/"><b>Spirit 88.3 FM</b><span>Kumasi</span></a>
-    <nav aria-label="Page sections">
-      <a class="link" href="/preachers/">All preachers</a>
-      <a class="link" href="#about">About</a>
-      <a class="link" href="#ministry">Ministry</a>
-      <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
-    </nav>
+    <div><span class="live-dot"></span> ON AIR NOW · Spirit 88.3 FM · Kumasi</div>
+    <div><a href="tel:+233266365596">📞 0266 365 596</a></div>
   </div>
-</header>
+</div>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo"><img src="/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="nav-links" id="site-menu">
+      <a href="/index.html#listen">Listen</a>
+      <a href="/schedule.html">Schedule</a>
+      <a href="/preachers/" class="active">Preachers</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/watch-tv.html">📺 Watch TV</a>
+      <a href="/advertise.html">Advertise</a>
+    </div>
+  </div>
+</nav>
 
 <main>
   <section class="hero">
@@ -45,7 +54,7 @@
         <img src="/preachers/images/bishop-divine-adjei.jpg" alt="Bishop Dr. Divine Adjei, standing, in a blue suit" width="810" height="1080" style="object-position:50% 15%">
       </figure>
       <div class="hero-text">
-        <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/preachers/">Our preachers</a></nav>
+        <div class="crumb" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/preachers/">Our preachers</a></div>
         <p class="title">Founder, Calvary Life Chapel International</p>
         <h1><small>Bishop Dr.</small>Divine Adjei</h1>
         <p class="lede">An apostle by calling with a strong teaching ministry, he has spent more than thirty years planting churches and raising leaders.</p>
@@ -98,7 +107,7 @@
   <section class="cta">
     <div class="wrap">
       <p>Join Bishop Dr. Divine Adjei on The Lord's Table, 4:00 – 4:30 PM on Spirit 88.3 FM.</p>
-      <p style="font-family:var(--sans);font-size:16px;margin-bottom:22px"><a href="/preachers/">Meet all our preachers</a></p>
+      <p class="more"><a href="/preachers/">Meet all our preachers</a></p>
       <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
     </div>
   </section>
@@ -106,13 +115,23 @@
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> Spirit 88.3 FM, Kumasi</span>
-    <a href="/">Back to spiritgh.com</a>
+    <a href="/" class="nav-logo"><img src="/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM" style="height:36px;"></a>
+    <p>© <span id="yr">2026</span> Spirit 88.3 FM · Kumasi, Ghana · Positive Soul Music</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/index.html#listen">Listen</a>
+      <a href="/schedule.html">Schedule</a>
+      <a href="/preachers/">Preachers</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/advertise.html">Advertise</a>
+    </div>
   </div>
 </footer>
 
 <audio id="stream" preload="none"></audio>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 <script src="/preachers/player.js"></script>
+<script src="/assets/nav.js"></script>
 </body>
 </html>

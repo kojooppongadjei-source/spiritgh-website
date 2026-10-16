@@ -7,47 +7,71 @@
 <meta name="description" content="Meet the preachers who host shows on Spirit 88.3 FM, Kumasi, and find out when each programme is on air.">
 <meta property="og:title" content="Our Preachers | Spirit 88.3 FM">
 <meta property="og:description" content="Meet the voices of faith on Spirit 88.3 FM and find out when they are on air.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/spirit-fm-logo.png">
 <link rel="stylesheet" href="/preachers/preachers.css">
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 
-<header class="top">
+<div class="live-bar">
   <div class="wrap">
-    <a class="brand" href="/"><b>Spirit 88.3 FM</b><span>Kumasi</span></a>
-    <nav aria-label="Main">
-      <a class="link" href="/">Home</a>
-      <a class="link" href="/preachers/">Preachers</a>
-      <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
-    </nav>
+    <div><span class="live-dot"></span> ON AIR NOW · Spirit 88.3 FM · Kumasi</div>
+    <div><a href="tel:+233266365596">📞 0266 365 596</a></div>
   </div>
-</header>
+</div>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo"><img src="/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="nav-links" id="site-menu">
+      <a href="/index.html#listen">Listen</a>
+      <a href="/schedule.html">Schedule</a>
+      <a href="/preachers/" class="active">Preachers</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/watch-tv.html">📺 Watch TV</a>
+      <a href="/advertise.html">Advertise</a>
+    </div>
+  </div>
+</nav>
 
 <main>
-  <div class="wrap">
-    <section class="dir-head">
+  <section class="page-hero">
+    <div class="wrap">
       <h1>Our preachers and the shows they host</h1>
       <p>Meet the men and women of God behind the programmes on Spirit 88.3 FM, listed in order of airtime.</p>
-    </section>
-
-    <ul class="days" id="days" aria-label="Filter by day on air"></ul>
-    <ul class="grid" id="grid"></ul>
-    <p class="empty" id="empty" hidden>No preachers are scheduled for this day yet.</p>
-  </div>
+      <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
+    </div>
+  </section>
+  <section class="dir">
+    <div class="wrap">
+      <ul class="days" id="days" aria-label="Filter by day on air"></ul>
+      <ul class="grid" id="grid"></ul>
+      <p class="empty" id="empty" hidden>No preachers are scheduled for this day yet.</p>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> Spirit 88.3 FM, Kumasi</span>
-    <a href="/">Back to spiritgh.com</a>
+    <a href="/" class="nav-logo"><img src="/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM" style="height:36px;"></a>
+    <p>© <span id="yr">2026</span> Spirit 88.3 FM · Kumasi, Ghana · Positive Soul Music</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/index.html#listen">Listen</a>
+      <a href="/schedule.html">Schedule</a>
+      <a href="/preachers/">Preachers</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/advertise.html">Advertise</a>
+    </div>
   </div>
 </footer>
 
 <audio id="stream" preload="none"></audio>
 <script src="/preachers/preachers.js"></script>
 <script src="/preachers/player.js"></script>
+<script src="/assets/nav.js"></script>
 <script>
 (function(){
   // Order by airtime: first "h:mm AM/PM" in the slot line; unscheduled preachers go last
@@ -79,12 +103,12 @@
         ? '<img src="/preachers/images/' + esc(p.photo) + '" alt="' + esc(full) + '" loading="lazy">'
         : '<span class="initials" aria-hidden="true">' + esc(initials(p.name)) + '</span>';
       return '<li class="card"><a href="/preachers/' + esc(p.slug) + '/">' +
-        '<div class="ph">' + ph + '</div>' +
+        '<div class="ph">' + ph + '</div><div class="body">' +
         (p.time ? '<p class="time">' + esc(p.time) + '</p>' : '') +
         (p.show ? '<h2>' + esc(p.show) + '</h2><p class="host">with ' + esc(full) + '</p>'
                 : '<h2>' + esc(full) + '</h2>') +
         (p.title ? '<p class="t">' + esc(p.title) + '</p>' : '') +
-        '</a></li>';
+        '</div></a></li>';
     }).join('');
     empty.hidden = shown.length > 0;
   }

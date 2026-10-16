@@ -1,0 +1,18 @@
+/* Mobile menu, shared by every page on spiritgh.com */
+.nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #E3E8EF;border-radius:8px;background:#fff;color:#12161C;cursor:pointer}
+.nav-toggle svg{width:22px;height:22px}
+.nav-toggle .ic-close{display:none}
+.nav-toggle[aria-expanded="true"] .ic-open{display:none}
+.nav-toggle[aria-expanded="true"] .ic-close{display:block}
+.nav-toggle:focus-visible,.nav-links a:focus-visible{outline:3px solid #C9962A;outline-offset:2px;border-radius:6px}
+@media(max-width:900px){
+  .nav-toggle{display:inline-flex}
+  nav .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid #E3E8EF;box-shadow:0 14px 28px rgba(18,22,28,.10);padding:4px 5% 12px;max-height:calc(100vh - 140px);overflow-y:auto}
+  nav .nav-links.open{display:flex}
+  nav .nav-links.open a{display:block;padding:14px 2px;font-size:16px;border-bottom:1px solid #E3E8EF}
+  nav .nav-links.open a:last-child{border-bottom:0}
+}
+
+/* Footer logo: the logo file has a white background, so show it on a white tile instead of inverting it */
+footer .nav-logo{filter:none}
+footer .nav-logo img{background:#fff;border-radius:8px;padding:6px 12px;height:48px!important;width:auto}

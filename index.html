@@ -158,6 +158,7 @@ footer .footer-links{display:flex;gap:18px;justify-content:center;margin-top:14p
 footer a:hover{color:#fff;}
 </style>
 
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 
@@ -170,9 +171,11 @@ footer a:hover{color:#fff;}
 <nav>
   <div class="wrap nav-inner">
     <a href="index.html" class="nav-logo"><img src="assets/spirit-fm-logo.png" alt="Spirit 88.3 FM"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="nav-links" id="site-menu">
       <a href="index.html#listen" class="">Listen</a>
       <a href="schedule.html" class="">Schedule</a>
+      <a href="/preachers/" class="">Preachers</a>
       <a href="news.html" class="">News</a>
       <a href="about.html" class="">About</a>
       <a href="watch-tv.html" class="">📺 Watch TV</a>
@@ -393,6 +396,7 @@ document.getElementById('verseRef').textContent = '— ' + v.r;
       <a href="index.html">Home</a>
       <a href="index.html#listen">Listen</a>
       <a href="schedule.html">Schedule</a>
+      <a href="/preachers/">Preachers</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
       <a href="advertise.html">Advertise</a>
@@ -400,5 +404,6 @@ document.getElementById('verseRef').textContent = '— ' + v.r;
   </div>
 </footer>
 
+<script src="/assets/nav.js"></script>
 </body>
 </html>
