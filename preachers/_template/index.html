@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  NEW PREACHER PROFILE — how to use
+  1. Copy this _template folder and rename it to the preacher's slug, e.g. /preachers/apostle-kwame-mensah/
+  2. Put their portrait in /preachers/images/ (portrait orientation, about 1000px wide)
+  3. Replace every [[ ... ]] below. Delete any section marked OPTIONAL that you don't need.
+  4. Add the same preacher, with their show and time, to /preachers/preachers.js so they appear on the directory page.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[[Honorific Full Name]] | Spirit 88.3 FM</title>
+<meta name="description" content="[[One sentence about who they are and their ministry.]]">
+<meta property="og:title" content="[[Honorific Full Name]]">
+<meta property="og:description" content="[[One sentence about who they are and their ministry.]]">
+<meta property="og:image" content="https://spiritgh.com/preachers/images/[[photo-file.jpg]]">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/preachers/preachers.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><b>Spirit 88.3 FM</b><span>Kumasi</span></a>
+    <nav aria-label="Page sections">
+      <a class="link" href="/preachers/">All preachers</a>
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#ministry">Ministry</a>
+      <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <figure class="portrait">
+        <img src="/preachers/images/[[photo-file.jpg]]" alt="[[Honorific Full Name]]" width="1000" height="1500">
+      </figure>
+      <div class="hero-text">
+        <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/preachers/">Our preachers</a></nav>
+        <p class="title">[[Main title, e.g. Senior Pastor, Grace Chapel International, Kumasi]]</p>
+        <h1><small>[[Honorific]]</small>[[Full Name]]</h1>
+        <p class="lede">[[Two sentences that capture who they are and what their ministry is known for.]]</p>
+
+        <!-- OPTIONAL: up to three key numbers. Delete the whole <dl> if you don't have them. -->
+        <dl class="facts">
+          <dt>[[Label]]</dt><dd>[[Number]]</dd>
+          <dt>[[Label]]</dt><dd>[[Number]]</dd>
+          <dt>[[Label]]</dt><dd>[[Number]]</dd>
+        </dl>
+
+        <div class="onair">
+          <div><div class="lab">Hosts</div><div class="when">[[Show name]]</div><div class="what">[[3:00 – 3:30 PM]] on Spirit 88.3 FM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap split">
+      <h2>About [[short name, e.g. Pastor Mensah]]</h2>
+      <div class="prose">
+        <p>[[Paragraph 1: calling, church, how long in ministry.]]</p>
+        <p>[[Paragraph 2: what the ministry focuses on.]]</p>
+        <p>[[Paragraph 3: family, if they want it included.]]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ministry">
+    <div class="wrap split">
+      <h2>Ministry</h2>
+      <div class="prose">
+        <p>[[What they lead and oversee today.]]</p>
+        <ul class="duties">
+          <li>[[Area of ministry]]</li>
+          <li>[[Area of ministry]]</li>
+          <li>[[Area of ministry]]</li>
+          <li>[[Area of ministry]]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONAL: books -->
+  <section class="block" id="books">
+    <div class="wrap split">
+      <h2>Books</h2>
+      <ul class="books">
+        <li>[[Book title]]</li>
+        <li>[[Book title]]</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OPTIONAL: education and honours -->
+  <section class="block" id="honours">
+    <div class="wrap split">
+      <h2>Training and honours</h2>
+      <div class="twocol">
+        <div>
+          <h3>Education</h3>
+          <ul class="plain"><li>[[Qualification, institution, year]]</li></ul>
+        </div>
+        <div>
+          <h3>Awards</h3>
+          <ul class="plain"><li>[[Award, awarding body]]</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <p>Hear more inspiring voices of faith on Spirit 88.3 FM.</p>
+      <p style="font-family:var(--sans);font-size:16px;margin-bottom:22px"><a href="/preachers/">Meet all our preachers</a></p>
+      <button class="listen" type="button" data-listen aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Listen live</span></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Spirit 88.3 FM, Kumasi</span>
+    <a href="/">Back to spiritgh.com</a>
+  </div>
+</footer>
+
+<audio id="stream" preload="none"></audio>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/preachers/player.js"></script>
+</body>
+</html>
