@@ -28,10 +28,10 @@ window.PREACHERS = [
     show: "", time: "11:40 AM – 12:00 noon", days: []
   },
   {
-    slug: "douglas-okonah-frempong",
-    honorific: "", name: "Douglas Okonah Frempong",
+    slug: "douglas-okonah-frimpong",
+    honorific: "", name: "Douglas Okonah Frimpong",
     title: "General Overseer, Centre for Christian Outreach Ministries",
-    photo: "douglas-okonah-frempong.jpg",
+    photo: "douglas-okonah-frimpong.jpg",
     show: "Revival Time", time: "3:00 – 3:30 PM", days: []
   },
   {
