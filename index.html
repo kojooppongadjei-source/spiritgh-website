@@ -156,6 +156,25 @@ footer .nav-logo{justify-content:center;margin-bottom:14px;filter:brightness(0) 
 footer p{font-size:13px;}
 footer .footer-links{display:flex;gap:18px;justify-content:center;margin-top:14px;flex-wrap:wrap;}
 footer a:hover{color:#fff;}
+
+/* Latest News strip */
+.ln{padding:44px 0 40px;border-bottom:1px solid var(--border);}
+.ln-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+.ln-head h2{font-size:clamp(22px,3vw,26px);font-weight:800;border-left:4px solid var(--gold);padding-left:12px;line-height:1.1;}
+.ln-head a{font-size:14px;font-weight:700;color:var(--gold-dark);}
+.ln-head a:hover{color:var(--blue);}
+.ln-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;}
+.ln-track::-webkit-scrollbar{display:none;}
+.ln-card{flex:0 0 calc((100% - 64px)/4.6);min-width:210px;scroll-snap-align:start;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;}
+.ln-card:hover{box-shadow:0 8px 22px rgba(18,22,28,.10);transform:translateY(-2px);}
+.ln-card img{width:100%;aspect-ratio:16/10.5;object-fit:cover;background:var(--blue-pale);}
+.ln-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.ln-tag{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--red);}
+.ln-title{font-size:15px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.ln-date{font-size:12.5px;color:var(--muted);margin-top:auto;padding-top:4px;}
+.ln-bar{height:4px;background:var(--border);border-radius:4px;margin-top:18px;overflow:hidden;}
+.ln-bar span{display:block;height:100%;width:30%;background:var(--gold);border-radius:4px;transition:width .15s;}
+@media (max-width:640px){.ln-card{flex-basis:72%;}}
 </style>
 
 <link rel="stylesheet" href="/assets/nav.css">
@@ -240,6 +259,47 @@ footer a:hover{color:#fff;}
     </div>
   </div>
 </section>
+
+<section class="ln" id="latest-news" hidden>
+  <div class="wrap">
+    <div class="ln-head">
+      <h2>Latest News</h2>
+      <a href="news.html">See all →</a>
+    </div>
+    <div class="ln-track" id="lnTrack"></div>
+    <div class="ln-bar"><span id="lnBar"></span></div>
+  </div>
+</section>
+
+<script>
+/* Pulls cards from news.html so new stories appear here automatically */
+(async function(){
+  try{
+    const res=await fetch('news.html',{cache:'no-cache'});
+    if(!res.ok) return;
+    const doc=new DOMParser().parseFromString(await res.text(),'text/html');
+    const cards=[...doc.querySelectorAll('.news-grid .news-card')].slice(0,10);
+    if(!cards.length) return;
+    const track=document.getElementById('lnTrack');
+    cards.forEach(c=>{
+      const img=c.querySelector('img'), tag=c.querySelector('.news-tag'), h=c.querySelector('h3'), meta=c.querySelector('.news-meta');
+      const a=document.createElement('a'); a.className='ln-card'; a.href=c.getAttribute('href');
+      if(img){const i=document.createElement('img'); i.src=img.getAttribute('src'); i.alt=img.getAttribute('alt')||''; i.loading='lazy'; a.appendChild(i);}
+      const b=document.createElement('div'); b.className='ln-body';
+      if(tag){const t=document.createElement('span'); t.className='ln-tag'; t.textContent=tag.textContent.trim(); b.appendChild(t);}
+      const ti=document.createElement('h3'); ti.className='ln-title'; ti.textContent=h?h.textContent.trim():''; b.appendChild(ti);
+      if(meta){const d=document.createElement('div'); d.className='ln-date'; d.textContent=meta.textContent.split('·')[0].trim(); b.appendChild(d);}
+      a.appendChild(b); track.appendChild(a);
+    });
+    document.getElementById('latest-news').hidden=false;
+    const bar=document.getElementById('lnBar');
+    const upd=()=>{const max=track.scrollWidth-track.clientWidth; const vis=track.clientWidth/track.scrollWidth;
+      bar.style.width=(max<=0?100:Math.max(vis,(track.scrollLeft+track.clientWidth)/track.scrollWidth)*100)+'%';};
+    track.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+  }catch(e){}
+})();
+</script>
+
 
 <section class="section" id="listen">
   <div class="wrap">
