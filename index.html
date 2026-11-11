@@ -178,6 +178,27 @@ footer a:hover{color:#fff;}
 </style>
 
 <link rel="stylesheet" href="/assets/nav.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RadioStation",
+  "name": "Spirit 88.3 FM",
+  "url": "https://spiritgh.com",
+  "logo": "https://spiritgh.com/assets/spirit-fm-logo.png",
+  "broadcastFrequency": "88.3 FM",
+  "areaServed": "Kumasi, Ghana",
+  "slogan": "Positive Soul Music",
+  "address": { "@type": "PostalAddress", "addressLocality": "Kumasi", "addressCountry": "GH" },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Starcom Group",
+    "subOrganization": [
+      { "@type": "RadioStation", "name": "Sunny 88.7 FM", "url": "https://sunnygh.com", "broadcastFrequency": "88.7 FM", "areaServed": "Accra, Ghana" }
+    ]
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/sister.css">
 </head>
 <body>
 
@@ -271,6 +292,10 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
+<section class="sis-wrap" id="sister-news" hidden>
+  <div class="wrap sis-slot"></div>
+</section>
+
 <script>
 /* Pulls cards from news.html so new stories appear here automatically */
 (async function(){
@@ -311,6 +336,11 @@ footer a:hover{color:#fff;}
       <p id="spiritPlayStatus" style="margin-top:14px;color:var(--muted);font-size:13px;">Tap to listen live</p>
       <audio id="spiritAudio" preload="none"></audio>
     </div>
+    <div class="sis-play">
+      <img class="sis-logo" src="https://sunnygh.com/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM">
+      <div class="sis-play-text"><strong>Also on air: Sunny 88.7 FM, Accra</strong><span id="sis-play-status">Our sister station in Accra</span></div>
+      <button type="button" class="sis-btn" id="sis-play-btn" aria-label="Play Sunny 88.7 FM live"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span id="sis-play-label">Listen to Sunny</span></button>
+    </div>
 
     <div class="eyebrow" style="margin-top:56px;">Today's Word</div>
     <h2 class="section-title">Verse of the Day</h2>
@@ -318,6 +348,24 @@ footer a:hover{color:#fff;}
       <div class="verse-eyebrow">Daily Encouragement</div>
       <div class="verse-text" id="verseText">Loading...</div>
       <div class="verse-ref" id="verseRef"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ccb">
+  <div class="wrap">
+    <div class="ccb">
+      <div class="ccb-head">
+        <div>
+          <h2>Churches and Christian businesses near you</h2>
+          <p id="ccb-sub">CCC&amp;B, Christian Connect Church &amp; Business, is the directory we share with Sunny 88.7 FM. Find a church or a Christian business in Ashanti and call or WhatsApp them straight from the listing.</p>
+        </div>
+        <div class="ccb-actions">
+          <a class="sis-btn" href="https://sunnygh.com/directory/add.html?region=Ashanti&amp;utm_source=spiritgh&amp;utm_medium=sister&amp;utm_campaign=ccb">List yours free</a>
+          <a class="sis-btn sis-btn-ghost" href="https://sunnygh.com/directory/?region=Ashanti&amp;utm_source=spiritgh&amp;utm_medium=sister&amp;utm_campaign=ccb">Browse the directory</a>
+        </div>
+      </div>
+      <div class="ccb-grid" id="ccb-grid" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -460,10 +508,13 @@ document.getElementById('verseRef').textContent = '— ' + v.r;
       <a href="news.html">News</a>
       <a href="about.html">About</a>
       <a href="advertise.html">Advertise</a>
+      <a href="/directory">CCC&amp;B Directory</a>
     </div>
+    <p class="starcom-line">Spirit 88.3 FM is a Starcom Group station. Our sister station is <a href="https://sunnygh.com/?utm_source=spiritgh&amp;utm_medium=sister&amp;utm_campaign=starcom">Sunny 88.7 FM in Accra</a>.</p>
   </div>
 </footer>
 
 <script src="/assets/nav.js"></script>
+<script src="/assets/sister.js" defer></script>
 </body>
 </html>

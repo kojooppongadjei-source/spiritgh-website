@@ -1,2 +1,8 @@
 /preachers/douglas-okonah-frempong/  /preachers/douglas-okonah-frimpong/  301
 /preachers/douglas-okonah-frempong  /preachers/douglas-okonah-frimpong/  301
+
+# CCC&B directory, shared with Sunny 88.7 FM (for on-air: "go to spiritgh.com/directory")
+/directory      https://sunnygh.com/directory/?region=Ashanti&utm_source=spiritgh&utm_medium=onair&utm_campaign=ccb  302
+/directory/     https://sunnygh.com/directory/?region=Ashanti&utm_source=spiritgh&utm_medium=onair&utm_campaign=ccb  302
+/ccb            https://sunnygh.com/directory/?region=Ashanti&utm_source=spiritgh&utm_medium=onair&utm_campaign=ccb  302
+/list           https://sunnygh.com/directory/add.html?region=Ashanti&utm_source=spiritgh&utm_medium=onair&utm_campaign=ccb  302

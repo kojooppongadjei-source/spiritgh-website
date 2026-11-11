@@ -1,0 +1,57 @@
+/* Sister station (Sunny 88.7 FM) and CCC&B blocks — Starcom Group cross-promotion */
+.sis,.sis-play,.ccb,.sis-article-wrap{--sis-gold:#C8920A;--sis-gold-dark:#8F6807;}
+.sis{background:#FBF6EA;border:1px solid #EEDFB8;border-radius:16px;padding:22px;margin:0 auto;line-height:1.4;}
+.sis-wrap{padding:48px 0;}
+.sis-article-wrap{max-width:760px;margin:8px auto 48px;padding:0 20px;}
+.sis-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.sis-logo{height:44px;width:auto;background:#fff;border-radius:10px;padding:5px 10px;border:1px solid #EEDFB8;}
+.sis-titles{flex:1;min-width:180px;}
+.sis-titles h2{font-size:20px;font-weight:800;color:#12161C;margin:0;line-height:1.25;}
+.sis-titles p{font-size:13.5px;color:#5F6B7A;margin:3px 0 0;}
+.sis-btn{display:inline-flex;align-items:center;gap:8px;background:var(--sis-gold);color:#fff!important;font-size:14px;font-weight:700;padding:10px 16px;border-radius:999px;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;text-decoration:none;}
+.sis-btn:hover,.sis-btn:focus-visible{background:var(--sis-gold-dark);}
+.sis-btn:focus-visible,.sis-card:focus-visible,.ccb-card:focus-visible{outline:3px solid #E9C979;outline-offset:2px;}
+.sis-btn svg{width:14px;height:14px;fill:currentColor;}
+.sis-btn-ghost{background:#fff;color:var(--sis-gold-dark)!important;border:1px solid #E2CC92;}
+.sis-btn-ghost:hover,.sis-btn-ghost:focus-visible{background:#fff;border-color:var(--sis-gold-dark);}
+.sis-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin;}
+.sis-card{flex:0 0 230px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid #EEDFB8;border-radius:12px;overflow:hidden;color:#12161C;transition:box-shadow .2s;}
+.sis-card:hover{box-shadow:0 8px 20px rgba(143,104,7,.14);}
+.sis-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#F3E9CF;}
+.sis-card-body{display:flex;flex-direction:column;gap:5px;padding:12px 14px 14px;flex:1;}
+.sis-tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sis-gold-dark);}
+.sis-title{font-size:14.5px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.sis-date{font-size:12px;color:#5F6B7A;margin-top:auto;padding-top:4px;}
+.sis-article-wrap .sis-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));overflow:visible;}
+
+/* Listen section: one-tap Sunny player */
+.sis-play{display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:440px;margin:14px auto 0;background:#FBF6EA;border:1px solid #EEDFB8;border-radius:14px;padding:14px 16px;text-align:left;}
+.sis-play .sis-logo{height:38px;}
+.sis-play-text{flex:1;min-width:150px;line-height:1.35;}
+.sis-play-text strong{display:block;font-size:14.5px;color:#12161C;}
+.sis-play-text span{font-size:12.5px;color:#5F6B7A;}
+
+/* CCC&B directory block */
+.ccb{background:#EAF2FB;border:1px solid #D2E2F4;border-radius:16px;padding:24px;}
+.ccb-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+.ccb-head h2{font-size:clamp(20px,2.6vw,24px);font-weight:800;color:#12161C;line-height:1.2;}
+.ccb-head p{font-size:14px;color:#4A5868;margin-top:6px;max-width:560px;}
+.ccb-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.ccb .sis-btn{background:#1D5FA5;}
+.ccb .sis-btn:hover,.ccb .sis-btn:focus-visible{background:#123F73;}
+.ccb .sis-btn-ghost{background:#fff;color:#1D5FA5!important;border-color:#B9D0EA;}
+.ccb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;}
+.ccb-card{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #D2E2F4;border-radius:12px;padding:12px 14px;color:#12161C;transition:box-shadow .2s;}
+.ccb-card:hover{box-shadow:0 8px 20px rgba(18,63,115,.12);}
+.ccb-mark{flex:0 0 48px;width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:16px;overflow:hidden;background:#1D5FA5;}
+.ccb-mark img{width:100%;height:100%;object-fit:cover;background:#fff;}
+.ccb-info{min-width:0;}
+.ccb-name{font-size:15px;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ccb-meta{font-size:12.5px;color:#5F6B7A;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ccb-empty{background:#fff;border:1px dashed #B9D0EA;border-radius:12px;padding:20px;font-size:14.5px;color:#4A5868;}
+.ccb-empty strong{color:#12161C;}
+
+/* Footer line */
+.starcom-line{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;line-height:1.6;opacity:.85;}
+.starcom-line a{color:#E2B654;font-weight:600;}
+@media(max-width:600px){.sis,.ccb{padding:16px;border-radius:12px;}.sis-head .sis-btn{width:100%;justify-content:center;}}
